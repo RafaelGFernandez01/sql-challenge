@@ -1,6 +1,6 @@
 CREATE TABLE "Department" (
-    "DepartmentID" string   NOT NULL,
-    "Name" string   NOT NULL,
+    "DepartmentID" VARCHAR   NOT NULL,
+    "Name" VARCHAR   NOT NULL,
     CONSTRAINT "pk_Department" PRIMARY KEY (
         "DepartmentID"
      )
@@ -8,15 +8,15 @@ CREATE TABLE "Department" (
 
 CREATE TABLE "DepartmentEmployee" (
     "EmployeeID" int   NOT NULL,
-    "DepartmentID" string   NOT NULL,
+    "DepartmentID" VARCHAR   NOT NULL,
     CONSTRAINT "pk_DepartmentEmployee" PRIMARY KEY (
         "EmployeeID","DepartmentID"
      )
 );
 
 CREATE TABLE "Title" (
-    "TitleID" string   NOT NULL,
-    "Title" string   NOT NULL,
+    "TitleID" VARCHAR   NOT NULL,
+    "Title" VARCHAR   NOT NULL,
     CONSTRAINT "pk_Title" PRIMARY KEY (
         "TitleID"
      )
@@ -24,12 +24,12 @@ CREATE TABLE "Title" (
 
 CREATE TABLE "Employees" (
     "EmployeeID" int   NOT NULL,
-    "TitleID" string   NOT NULL,
+    "TitleID" VARCHAR   NOT NULL,
     "BirthDate" date   NOT NULL,
-    "FisrtName" string   NOT NULL,
-    "LastName" string   NOT NULL,
-    "Sex" string   NOT NULL,
-    "HiredDate" string   NOT NULL,
+    "FisrtName" VARCHAR   NOT NULL,
+    "LastName" VARCHAR   NOT NULL,
+    "Sex" VARCHAR   NOT NULL,
+    "HiredDate" VARCHAR   NOT NULL,
     CONSTRAINT "pk_Employees" PRIMARY KEY (
         "EmployeeID"
      )
@@ -44,7 +44,7 @@ CREATE TABLE "Salary" (
 );
 
 CREATE TABLE "DepartmentManager" (
-    "DepartmentID" string   NOT NULL,
+    "DepartmentID" VARCHAR   NOT NULL,
     "EmployeeID" int   NOT NULL,
     CONSTRAINT "pk_DepartmentManager" PRIMARY KEY (
         "DepartmentID","EmployeeID"
