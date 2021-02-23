@@ -99,17 +99,17 @@ FROM
 ;
 
 --8)
---In descending order, list the frequency count of employee last names
+---In descending order, list the frequency count of employee last names, i.e., how many employees share each last name how many employees share each last name
+
 SELECT 
-	E."LastName" as "last name"
+	E."LastName" as "last name",
+	COUNT (E."EmployeeID")
 FROM 
 	"Employees" E
+GROUP BY 
+ 	E."LastName" 
 ORDER BY 
- 	"last name" DESC
+	"last name" DESC
 ;
-
---8)
---b)how many employees share each last name
-
 
 	
