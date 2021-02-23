@@ -37,4 +37,33 @@ FROM
 	INNER JOIN "Employees" E
 		ON E."EmployeeID" = DM."EmployeeID"
 ;
+
+--4)
+--List the department of each employee with the following information: employee number, last name, first name, and department name.
+
+SELECT 
+	E."EmployeeID" as "employee number",
+	E."LastName" as "last name",
+	E."FisrtName" as "first name",
+	D."Name" as "department name"
+FROM 
+	"DepartmentEmployee" DE
+	INNER JOIN "Department" D
+		ON DE."DepartmentID" = D."DepartmentID"
+	INNER JOIN "Employees" E
+		ON E."EmployeeID" = DE."EmployeeID"
+;
+
+--5)
+--List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+SELECT 
+	E."FisrtName" as "first name",
+	E."LastName" as "last name",
+	E."Sex" as "sex"
+FROM "Employees" E
+WHERE
+	E."FisrtName" LIKE 'Hercules'
+AND E."LastName" LIKE 'B%'
+;
+
 		
