@@ -98,7 +98,18 @@ FROM
 	WHERE "Name" = 'Sales' OR "Name" = 'Development'
 ;
 
+--8)
+--In descending order, list the frequency count of employee last names
+SELECT 
+	E."LastName" as "last name"
+FROM 
+	"Employees" E
+ORDER BY 
+ 	"last name" DESC
+;
 
+--8)
+--b)how many employees share each last name
 
 
 	
