@@ -66,4 +66,19 @@ WHERE
 AND E."LastName" LIKE 'B%'
 ;
 
-		
+--6)
+--List all employees in the Sales department, including their employee number, last name, first name, and department name.
+SELECT 
+ 	E."EmployeeID" as "employee number",
+ 	E."LastName" as "last name",
+ 	E."FisrtName" as "first name",
+ 	D."Name" as "department name"
+FROM 
+	"DepartmentEmployee" DE
+	INNER JOIN "Department" D
+		ON DE."DepartmentID" = D."DepartmentID"
+	INNER JOIN "Employees" E
+		ON E."EmployeeID" = DE."EmployeeID"
+	WHERE "Name" = 'Sales'	
+;
+	
