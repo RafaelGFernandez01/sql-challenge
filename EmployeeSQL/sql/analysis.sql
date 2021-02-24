@@ -79,7 +79,7 @@ FROM
 		ON DE."DepartmentID" = D."DepartmentID"
 	INNER JOIN "Employees" E
 		ON E."EmployeeID" = DE."EmployeeID"
-	WHERE "Name" = 'Sales'	
+WHERE D."Name" = 'Sales'	
 ;
 
 --7)
@@ -95,7 +95,7 @@ FROM
 		ON DE."DepartmentID" = D."DepartmentID"
 	INNER JOIN "Employees" E
 		ON E."EmployeeID" = DE."EmployeeID"
-	WHERE "Name" = 'Sales' OR "Name" = 'Development'
+WHERE D."Name" = 'Sales' OR D."Name" = 'Development'
 ;
 
 --8)
@@ -109,7 +109,9 @@ FROM
 GROUP BY 
  	E."LastName" 
 ORDER BY 
-	"last name" DESC
+	E."LastName" DESC
 ;
+
+
 
 	
