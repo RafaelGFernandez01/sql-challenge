@@ -1,5 +1,5 @@
 -- 1)
---List the following details of each employee: employee number, last name, first name, sex, and salary.
+-- List the following details of each employee: employee number, last name, first name, sex, and salary.
 SELECT 
 	E."EmployeeID" as "employee number",
 	E."LastName" as "last name",
@@ -11,8 +11,8 @@ FROM "Employees" E
     	ON E."EmployeeID" = S."EmployeeID"
 ;
 
---2)
---List first name, last name, and hire date for employees who were hired in 1986.
+-- 2)
+-- List first name, last name, and hire date for employees who were hired in 1986.
 SELECT 
 	E."FisrtName" as "first name",
 	E."LastName" as "last name",
@@ -21,8 +21,8 @@ FROM "Employees" E
 WHERE E."HiredDate" LIKE '%/1986'
 ;
 
---3)
---List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+-- 3)
+-- List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
 SELECT 
 	D."DepartmentID" as "department number",
@@ -38,8 +38,8 @@ FROM
 		ON E."EmployeeID" = DM."EmployeeID"
 ;
 
---4)
---List the department of each employee with the following information: employee number, last name, first name, and department name.
+-- 4)
+-- List the department of each employee with the following information: employee number, last name, first name, and department name.
 
 SELECT 
 	E."EmployeeID" as "employee number",
@@ -54,8 +54,8 @@ FROM
 		ON E."EmployeeID" = DE."EmployeeID"
 ;
 
---5)
---List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+-- 5)
+-- List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 SELECT 
 	E."FisrtName" as "first name",
 	E."LastName" as "last name",
@@ -66,8 +66,8 @@ WHERE
 AND E."LastName" LIKE 'B%'
 ;
 
---6)
---List all employees in the Sales department, including their employee number, last name, first name, and department name.
+-- 6)
+-- List all employees in the Sales department, including their employee number, last name, first name, and department name.
 SELECT 
  	E."EmployeeID" as "employee number",
  	E."LastName" as "last name",
@@ -82,8 +82,8 @@ FROM
 WHERE D."Name" = 'Sales'	
 ;
 
---7)
---List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+-- 7)
+-- List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 SELECT 
  	E."EmployeeID" as "employee number",
  	E."LastName" as "last name",
@@ -98,8 +98,8 @@ FROM
 WHERE D."Name" = 'Sales' OR D."Name" = 'Development'
 ;
 
---8)
----In descending order, list the frequency count of employee last names, i.e., how many employees share each last name how many employees share each last name
+-- 8)
+-- In descending order, list the frequency count of employee last names, i.e., how many employees share each last name how many employees share each last name
 
 SELECT 
 	E."LastName" as "last name",
